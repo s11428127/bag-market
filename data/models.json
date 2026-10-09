@@ -1,0 +1,20 @@
+{
+  "_說明": "追蹤的款式。retail_twd = 台灣專櫃價（新台幣），null = 還沒查；請以品牌官網或專櫃當下報價為準，查到就填，順便更新 retail_date。ebay_q = 自動排程在 eBay 搜尋用的關鍵字。",
+  "models": [
+    { "id": "hermes-birkin-25",     "brand": "Hermès",          "name": "Birkin 25",                 "retail_twd": null, "retail_date": null, "ebay_q": "Hermes Birkin 25" },
+    { "id": "hermes-kelly-25",      "brand": "Hermès",          "name": "Kelly 25",                  "retail_twd": null, "retail_date": null, "ebay_q": "Hermes Kelly 25" },
+    { "id": "chanel-classic-flap-m","brand": "Chanel",          "name": "Classic Flap 中號",          "retail_twd": null, "retail_date": null, "ebay_q": "Chanel Classic Flap Medium" },
+    { "id": "chanel-19",            "brand": "Chanel",          "name": "Chanel 19",                 "retail_twd": null, "retail_date": null, "ebay_q": "Chanel 19 flap bag" },
+    { "id": "lv-neverfull-mm",      "brand": "Louis Vuitton",   "name": "Neverfull MM",              "retail_twd": null, "retail_date": null, "ebay_q": "Louis Vuitton Neverfull MM" },
+    { "id": "lv-speedy-25-b",       "brand": "Louis Vuitton",   "name": "Speedy Bandoulière 25",     "retail_twd": null, "retail_date": null, "ebay_q": "Louis Vuitton Speedy Bandouliere 25" },
+    { "id": "dior-lady-m",          "brand": "Dior",            "name": "Lady Dior 中號",             "retail_twd": null, "retail_date": null, "ebay_q": "Lady Dior Medium" },
+    { "id": "dior-book-tote-m",     "brand": "Dior",            "name": "Book Tote 中號",             "retail_twd": null, "retail_date": null, "ebay_q": "Dior Book Tote Medium" },
+    { "id": "gucci-jackie-1961-s",  "brand": "Gucci",           "name": "Jackie 1961 小號",           "retail_twd": null, "retail_date": null, "ebay_q": "Gucci Jackie 1961 small" },
+    { "id": "prada-re-edition-2005","brand": "Prada",           "name": "Re-Edition 2005",           "retail_twd": null, "retail_date": null, "ebay_q": "Prada Re-Edition 2005" },
+    { "id": "bv-jodie-mini",        "brand": "Bottega Veneta",  "name": "Jodie Mini",                "retail_twd": null, "retail_date": null, "ebay_q": "Bottega Veneta Jodie mini" },
+    { "id": "celine-triomphe",      "brand": "Celine",          "name": "Triomphe Teen",             "retail_twd": null, "retail_date": null, "ebay_q": "Celine Triomphe Teen" },
+    { "id": "goyard-st-louis-pm",   "brand": "Goyard",          "name": "Saint Louis PM",            "retail_twd": null, "retail_date": null, "ebay_q": "Goyard Saint Louis PM" },
+    { "id": "loewe-puzzle-s",       "brand": "Loewe",           "name": "Puzzle 小號",                "retail_twd": null, "retail_date": null, "ebay_q": "Loewe Puzzle small" },
+    { "id": "ysl-loulou-m",         "brand": "Saint Laurent",   "name": "Loulou 中號",                "retail_twd": null, "retail_date": null, "ebay_q": "Saint Laurent Loulou Medium" }
+  ]
+}

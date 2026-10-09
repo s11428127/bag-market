@@ -1,0 +1,11 @@
+{
+  "name": "bag-market",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "npx http-server -p 8099 -s -c-1 .",
+    "demo": "node scripts/make-demo.mjs",
+    "fetch": "node scripts/fetch-ebay.mjs"
+  }
+}

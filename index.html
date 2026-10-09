@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>包包行情</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="top">
+  <b class="logo">包包行情 <i>Bag Market</i></b>
+  <span class="asof" id="asof"></span>
+</header>
+
+<div class="demo-bar" id="demoBar" hidden>示範模式：以下數字全部是<b>亂數產生的假資料</b>，只用來看介面。<a href="./">回真實資料</a></div>
+
+<main>
+  <section class="panel">
+    <div class="panel-h">
+      <h2>行情 <i>Market</i></h2>
+      <span class="hint">近 <select id="days"><option>30</option><option selected>90</option><option>180</option><option>365</option></select> 天・新台幣</span>
+    </div>
+    <div class="empty" id="empty" hidden>
+      還沒有任何價格記錄。用下面的「記一筆」開始，或先看 <a href="?demo=1">示範模式</a>。
+    </div>
+    <div class="tbl-wrap">
+      <table class="mkt" id="mkt">
+        <thead><tr>
+          <th class="l">款式</th>
+          <th>成交中位<i>Sold</i></th>
+          <th>掛價中位<i>Ask</i></th>
+          <th>專櫃價<i>Retail</i></th>
+          <th>溢價率<i>Premium</i></th>
+          <th class="spark-h">走勢</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel" id="detail" hidden>
+    <div class="panel-h">
+      <h2 id="dTitle"></h2>
+      <span class="hint" id="dBrand"></span>
+    </div>
+    <div class="stats" id="dStats"></div>
+    <canvas id="chart" aria-label="每週價格走勢"></canvas>
+    <div class="legend"><span class="k sold"></span>成交 <span class="k ask"></span>掛價 <span class="k retail"></span>專櫃價</div>
+    <h3>最近記錄 <i>Recent</i></h3>
+    <div class="tbl-wrap"><table class="rec" id="dRec"><thead><tr>
+      <th class="l">日期</th><th class="l">平台</th><th class="l">種類</th><th>價格</th><th>≈ 台幣</th><th class="l">狀況</th>
+    </tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-h"><h2>記一筆 <i>Add</i></h2><span class="hint">存在這台裝置，再匯出貼進 data/prices.csv</span></div>
+    <form id="form" class="form" autocomplete="off">
+      <label>款式<select name="model" id="fModel"></select></label>
+      <label>日期<input type="date" name="date" required></label>
+      <label>平台<input name="source" list="srcList" placeholder="例：Vestiaire" required></label>
+      <label>種類
+        <select name="kind"><option value="sold">成交 Sold（真的賣掉）</option><option value="ask">掛價 Ask（賣家開價）</option></select>
+      </label>
+      <label>價格<input name="price" type="number" min="0" step="any" inputmode="decimal" required></label>
+      <label>幣別<select name="currency" id="fCur"></select></label>
+      <label>狀況<select name="condition"><option>全新</option><option>近新</option><option>良好</option><option>普通</option></select></label>
+      <label class="wide">網址<input name="url" type="url" placeholder="https://…（選填）"></label>
+      <label class="wide">備註<input name="note" placeholder="選填"></label>
+      <div class="wide row">
+        <button type="submit">加入</button>
+        <span class="msg" id="fMsg"></span>
+      </div>
+    </form>
+    <datalist id="srcList"></datalist>
+    <div class="pending" id="pending" hidden>
+      <div class="panel-h"><h3>待匯出 <span id="pN"></span> 筆</h3>
+        <span class="row"><button type="button" id="pCopy">複製 CSV 行</button><button type="button" id="pDl">下載合併後的 prices.csv</button><button type="button" class="ghost" id="pClear">清空</button></span>
+      </div>
+      <pre id="pText"></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">掛價 ≠ 成交：賣家開價常常比實際賣掉的價格高，判斷行情以成交為主。溢價率 = 成交中位 ÷ 專櫃價 − 1。</footer>
+
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
