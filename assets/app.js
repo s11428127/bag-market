@@ -1,3 +1,4 @@
+import { bagArt } from './bags.js';
 import { parseCSV, toCSV, toCSVLine, summarize, weekly, validate, toTWD, isNum, KINDS } from './stats.js';
 
 const $ = s => document.querySelector(s);
@@ -40,7 +41,7 @@ function renderTable() {
   tb.innerHTML = models.map(m => {
     const s = end ? summarize(rows, m, fx, { asOf: end, days }) : {};
     return `<tr data-id="${m.id}" class="${m.id === sel ? 'on' : ''}">
-      <td class="l nm"><b>${escHTML(m.name)}</b><span>${escHTML(m.brand)}</span></td>
+      <td class="l nm"><div class="nm-in">${bagArt(m)}<div><b>${escHTML(m.name)}</b><span>${escHTML(m.brand)}</span></div></div></td>
       <td>${fmt(s.sold)}<span class="sub">${s.nSold ? s.nSold + ' 筆' : ''}</span></td>
       <td>${fmt(s.ask)}<span class="sub">${s.nAsk ? s.nAsk + ' 筆' : ''}</span></td>
       <td class="retail">${fmt(m.retail_twd)}</td>
@@ -78,6 +79,7 @@ function renderDetail() {
   const end = asOf(), days = +$('#days').value;
   const s = end ? summarize(rows, m, fx, { asOf: end, days }) : {};
   $('#dTitle').innerHTML = `${escHTML(m.name)}`;
+  $('#dArt').innerHTML = bagArt(m, 'lg') + (m.img ? '' : '<span class="art-note">示意圖</span>');
   $('#dBrand').textContent = `${m.brand}・近 ${days} 天`;
   const ch = s.cheapest;
   const stat = (k, v, sub = '', c = '') => `<div class="stat"><div class="k">${k}</div><div class="v ${c}">${v}</div><div class="s">${sub}</div></div>`;

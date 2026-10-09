@@ -23,6 +23,12 @@ npm run serve     # http://localhost:8099 ；加 ?demo=1 看示範（亂數假�
 - `kind`：`sold` = 成交（真的賣掉），`ask` = 掛價（賣家開價）。**一定要分清楚**，兩者常差一成以上。
 - 手動記：網頁下方「記一筆」→ 存在瀏覽器 →「下載合併後的 prices.csv」覆蓋 `data/prices.csv` 後 commit。
 
+## 包包圖片
+
+每款都有一張自己畫的**示意圖**（`assets/bags.js`，SVG 線稿，抓外型特徵，不畫商標），暗色模式會跟著換色。
+不用品牌官方照片：那些照片有著作權，直接拿來用或盜連都不行。
+想換成**自己拍的照片**：放進 `img/`，在 `data/models.json` 那一款加 `"img": "img/檔名.jpg"`，就會優先顯示照片。
+
 ## 自動排程
 
 `.github/workflows/fetch.yml` 每週一跑 `scripts/fetch-ebay.mjs`：用 eBay 官方 Browse API 搜每款「目前在賣」的價格，縮成一筆中位數寫進 CSV。

@@ -10,3 +10,4 @@
 - 排程判斷有沒有變化用 `git status --porcelain`，不要用 `git diff`。
 - canvas 顏色從 CSS 變數取，尺寸夾 `Math.max(0, …)`。
 - 說做好之前：`npm test` + Playwright 320 / 390 / 680 / 1180 四種寬度（無 console 錯誤、無水平捲動）。
+- 包包圖片用 `assets/bags.js` 自己畫的 SVG 示意圖，不用品牌官方照片、不畫商標；使用者自己的照片走 models.json 的 `img`。
